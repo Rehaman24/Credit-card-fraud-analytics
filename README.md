@@ -23,22 +23,21 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 - **Real-world impact:** Reduces fraud detection lag from **48 hours to < 1 hour** | Saves 10+ hours/week of manual analysis.
 - **Production features:** Serverless Spark processing, **automated file archiving**, automated CI/CD testing, scalable architecture.
 
-**Core Skills:**
-    * **Data Processing:** PySpark (DataFrames, SQL, transformations, joins).
-    * **Orchestration:** Apache Airflow (GCP Composer, DAGs, Operators, Sensors).
-    * **Cloud Platform:** GCP (Dataproc, BigQuery, GCS, Composer).
-    * **DevOps/DataOps:** CI/CD with GitHub Actions, Unit Testing with PyTest.
-    * **Language:** Python, SQL 
-
-
+## Core Skills
+- **Data Processing:** PySpark (DataFrames, SQL, transformations, joins).
+- **Orchestration:** Apache Airflow (GCP Composer, DAGs, Operators, Sensors).
+- **Cloud Platform:** GCP (Dataproc, BigQuery, GCS, Composer).
+- **DevOps/DataOps:** CI/CD with GitHub Actions, Unit Testing with PyTest.
+- **Language:** Python, SQL
 
 ## Quick Start Guide
-**👔 For Recruiters (30 sec):**&nbsp;&nbsp;
-[TL;DR Summary](#1-⚡-tldr-for-recruiters-30-second-summary) → [Watch Demo]&#8203;(`[YOUR_LOOM_DEMO_LINK]`) → [Business Impact](#7-business-impact--use-cases)
-**👨‍💻 For Engineers (5 min):**&nbsp;&nbsp;
-[Pipeline Components](#12-pipeline-components) → [Architecture](#11-architecture--data-model) → [Setup Instructions](#13-setup-instructions)
-**🔍 For Hiring Managers (2 min):**&nbsp;&nbsp;
-[Results & Metrics](#14-execution--results) → [Skills Shown](#17-key-achievements--learnings) → [Interactive Diagram]&#8203;(`[YOUR_ARCHITECTURE_LINK]`)
+
+**👔 For Recruiters (30 sec):** [TL;DR Summary](#1-⚡-tldr-for-recruiters-30-second-summary) → [Watch Demo] (`[YOUR_LOOM_DEMO_LINK]`) → [Business Impact](#7-business-impact--use-cases)
+
+**👨‍💻 For Engineers (5 min):** [Pipeline Components](#12-pipeline-components) → [Architecture](#11-architecture--data-model) → [Setup Instructions](#13-setup-instructions)
+
+**🔍 For Hiring Managers (2 min):** [Results & Metrics](#14-execution--results) → [Skills Shown](#17-key-achievements--learnings) → [Interactive Diagram] (`[YOUR_ARCHITECTURE_LINK]`)
+
 
 ### 📊 Impact at a Glance
 | Metric | Before (Manual) | After (This Pipeline) | Improvement |
@@ -54,17 +53,15 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 - **LinkedIn**: [linkedin.com/in/rehmanali24](https://www.linkedin.com/in/rehmanali24/)
 - **GitHub Profile**: [github.com/Rehaman24](https://github.com/Rehaman24)
 
---
-
 ## Technologies & Tools
-**Cloud Platform**: GCP
-**Orchestration**: Airflow via GCP Composer
-**Data Processing**: PySpark
-**Data Warehouse**: BigQuery
- **Storage**:GCS
-**Language**:Python, SQL
-**CI/CD**: GitHub Actions
- **Testing**: PyTest
+**Cloud Platform**: GCP  
+**Orchestration**: Airflow via GCP Composer  
+**Data Processing**: PySpark  
+**Data Warehouse**: BigQuery  
+**Storage**: GCS  
+**Language**: Python, SQL  
+**CI/CD**: GitHub Actions  
+**Testing**: PyTest
 
  **Key Technologies & Operators**:
 - `GCSObjectsWithPrefixExistenceSensor` - File detection and pipeline trigger
@@ -181,14 +178,14 @@ LIMIT 10;
 **Reliability:** CI/CD (GitHub Actions) + Unit Tests (PyTest) ensure code is validated before deployment.
 **Scalability:** Architecture scales horizontally to handle petabytes of data.
 
-#### Production-Ready Features
+## Production-Ready Features
 
-✅ Serverless Processing: Uses Dataproc Serverless for zero-ops cluster management.
-✅ Automated Testing: CI/CD pipeline runs PyTest unit tests on every push, blocking failed builds.
-✅ Single-Run Design: File-archiving logic prevents the pipeline from processing the same file twice.
-✅ Modular & Scalable: PySpark logic is decoupled from Airflow orchestration.
-✅ Data Validation: Spark job filters out bad records (e.g., negative amounts, null IDs) before processing.
-✅ Comprehensive error handling and Airflow retries built-in.
+- ✅ **Serverless Processing**: Uses Dataproc Serverless for zero-ops cluster management.
+- ✅ **Automated Testing**: CI/CD pipeline runs PyTest unit tests on every push, blocking failed builds.
+- ✅ **Single-Run Design**: File-archiving logic prevents the pipeline from processing the same file twice.
+- ✅ **Modular & Scalable**: PySpark logic is decoupled from Airflow orchestration.
+- ✅ **Data Validation**: Spark job filters out bad records (e.g., negative amounts, null IDs) before processing.
+- ✅ **Comprehensive error handling** and Airflow retries built-in.
 
 #### Quantifiable Benefits
 * **Cost Efficiency:** Uses Dataproc Serverless, paying *only* for the compute time used during the 10-minute Spark job, rather than for a 24/7 persistent cluster.
@@ -379,16 +376,15 @@ This is a portfolio project and I'm actively seeking feedback from data engineer
 
 ### How to Provide Feedback
 
-
 **📋 Structured Code Review**
-- [View Discussion Template](httpss://github.com/[https://github.com/Rehaman24/Credit-card-fraud-analytics]/discussions)
+- [View Discussion Template](https://github.com/Rehaman24/Credit-card-fraud-analytics/discussions)
 - Click "New Discussion" → Select "Code Review" category
 - Share your insights on architecture, code quality, or best practices
 
 **💡 Quick Feedback**
 - ⭐ Star the repo if you found it valuable
-- 🐛 [Report issues](httpss://github.com/[https://github.com/Rehaman24/Credit-card-fraud-analytics]/issues) for technical improvements
-- 💬 [Start a discussion](httpss://github.com/[https://github.com/Rehaman24/Credit-card-fraud-analytics]/discussions) for general comments
+- 🐛 [Report issues](https://github.com/Rehaman24/Credit-card-fraud-analytics/issues) for technical improvements
+- 💬 [Start a discussion](https://github.com/Rehaman24/Credit-card-fraud-analytics/discussions) for general comments
 &nbsp;&nbsp;
 ### What I'm Looking For
 - Code quality and PySpark best practices
@@ -398,7 +394,6 @@ This is a portfolio project and I'm actively seeking feedback from data engineer
 
 **All feedback is public and helps demonstrate continuous learning!**
 
----
 
 ## 📫 Connect With Me
 
