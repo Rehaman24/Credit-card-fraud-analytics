@@ -3,7 +3,7 @@
 Production-grade, serverless data pipeline that transforms raw JSON transactions into analytics-ready fraud insights—processing daily files in under 10 minutes with 100% unit test coverage.
 
 [![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/) |
-[![Apache Airflow](https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=apache-airflow&logoColor=white)](https://airflow.apache.org/) (via **GCP Composer**) |
+[![Apache Airflow](https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=apache-airflow&logoColor=white)](https://airflow.apache.org/)|
  [![Apache Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)](https://spark.apache.org/) 
 [![Dataproc](https://img.shields.io/badge/Dataproc_Serverless-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/dataproc) |
 [![Google BigQuery](https://img.shields.io/badge/Google_BigQuery-4285F4?style=for-the-badge&logo=google-bigquery&logoColor=white)](https://cloud.google.com/bigquery) |
@@ -18,18 +18,20 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 
 ## TL;DR for Recruiters(30-Sec Summary)
 
-**What it does:** Automates daily fraud risk analysis from raw JSON transactions → analytics-ready, enriched BigQuery tables.
+**What it does:** Automates daily fraud risk analysis from raw JSON transactions → analytics-ready, enriched BigQuery tables. 
+
 **Technical stack:** **PySpark** + **Apache Airflow** + **GCP** (Dataproc Serverless, BigQuery, GCS) + **CI/CD** (GitHub Actions, PyTest).
 **Key metrics:** Daily files processed in **< 10 minutes** | **100% unit test coverage** | **0% duplicate file runs**.
 **Real-world impact:** Reduces fraud detection lag from **48 hours to < 1 hour** | Saves 10+ hours/week of manual analysis.
-**Production features:** Serverless Spark processing, **automated file archiving**, automated CI/CD testing, scalable architecture.
+**Production features:** Serverless Spark processing, 
+**automated file archiving**, automated CI/CD testing, scalable architecture.
 
 * **Core Skills:**
     * **Data Processing:** PySpark (DataFrames, SQL, transformations, joins).
     * **Orchestration:** Apache Airflow (GCP Composer, DAGs, Operators, Sensors).
     * **Cloud Platform:** GCP (Dataproc, BigQuery, GCS, Composer).
     * **DevOps/DataOps:** CI/CD with GitHub Actions, Unit Testing with PyTest.
-    * **Language:** Python.
+    * **Language:** Python, SQL 
 
 
 
@@ -54,14 +56,15 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 | **Manual Steps Required** | 5+ steps per run | 0 (fully automated) | **100% automation** 🤖 |
 | **Scalability** | Fails > 1M rows | Handles Petabytes | **Unlimited** 🚀 |
 
-## 4. Project Links
+## 📁 Project Links
+- **GitHub Repository**: [github.com/Rehaman24/fraud-risk-pipeline-pyspark-airflow-gcp](httpsS://github.com/Rehaman24/fraud-risk-pipeline-pyspark-airflow-gcp)
+- **LinkedIn**: [linkedin.com/in/rehmanali24](httpss://www.linkedin.com/in/rehmanali24/)
+- **GitHub Profile**: [github.com/Rehaman24](httpss://github.com/Rehaman24)
+  
+---
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/YourUsername/credit-card-fraud-pipeline)
+## Technologies & Tools
 
-## 5. Technologies & Tools
-
-| Category | Technology |
-| :--- | :--- |
 **Cloud Platform**: GCP
 **Orchestration**: Airflow via GCP Composer
 **Data Processing**: PySpark
@@ -70,6 +73,16 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 **Language**:Python, SQL
 **CI/CD**: GitHub Actions
  **Testing**: PyTest
+
+ **Key Technologies & Operators**:
+- `GCSObjectsWithPrefixExistenceSensor` - File detection and pipeline trigger
+- `DataprocCreateBatchOperator` - Submitting serverless PySpark jobs
+- `GCSToGCSOperator` - Archiving processed files
+- `PySpark` - Large-scale transformation and business logic
+- `PyTest` - Unit testing for Spark transformations
+- `GitHub Actions` - CI/CD for automated testing & deployment
+
+**Concepts**: Serverless ETL, Data Enrichment, Risk Scoring, CI/CD Pipeline, Unit Testing, File-based Triggering (Polling), Data Validation.
 
 ## Overview
 
@@ -115,6 +128,7 @@ WHERE
   AND transaction_timestamp > TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 1 HOUR)
 ORDER BY
   transaction_timestamp DESC;
+```
 
 **Business Value**: Immediately freeze compromised cards, contact customers to verify charges, and prevent further financial loss.
 
@@ -123,36 +137,22 @@ ORDER BY
 **Impact**: Risk management teams can analyze aggregated data to identify which merchant categories, locations, or transaction types are being targeted by fraudsters
 
 ```SELECT
-
   merchant_category,
-
   COUNT(*) AS total_transactions,
-
   SUM(CASE WHEN fraud_risk_level IN ('Critical', 'High') THEN 1 ELSE 0 END) AS fraud_txns,
-
   (SUM(CASE WHEN fraud_risk_level IN ('Critical', 'High') THEN 1 ELSE 0 END) / COUNT(*)) * 100 AS fraud_rate_pct
-
 FROM
-
   `credit_card.transactions`
-
 WHERE
-
   transaction_timestamp >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)
-
 GROUP BY
-
   merchant_category
-
 ORDER BY
-
   fraud_rate_pct DESC
-
 LIMIT 10;
-
 ```
-
 **Business Value**: Update internal risk models, place stricter controls on high-risk categories, and inform future fraud prevention strategies.
+---
 #### 3. Data-Driven Risk Management
 **Impact**: Executives and managers can access reliable, up-to-date fraud metrics from BI dashboards (Looker, Tableau) connected directly to BigQuery.
 
@@ -191,12 +191,12 @@ LIMIT 10;
 
 #### Production-Ready Features
 
-✅ Serverless Processing: Uses Dataproc Serverless for zero-ops cluster management.
-✅ Automated Testing: CI/CD pipeline runs PyTest unit tests on every push, blocking failed builds.
-✅ Single-Run Design: File-archiving logic prevents the pipeline from processing the same file twice.
-✅ Modular & Scalable: PySpark logic is decoupled from Airflow orchestration.
-✅ Data Validation: Spark job filters out bad records (e.g., negative amounts, null IDs) before processing.
-✅ Comprehensive error handling and Airflow retries built-in.
+- ✅ Serverless Processing: Uses Dataproc Serverless for zero-ops cluster management.
+- ✅ Automated Testing: CI/CD pipeline runs PyTest unit tests on every push, blocking failed builds.
+- ✅ Single-Run Design: File-archiving logic prevents the pipeline from processing the same file twice.
+- ✅ Modular & Scalable: PySpark logic is decoupled from Airflow orchestration.
+- ✅ Data Validation: Spark job filters out bad records (e.g., negative amounts, null IDs) before processing.
+- ✅ Comprehensive error handling and Airflow retries built-in.
 
 #### Quantifiable Benefits
 * **Cost Efficiency:** Uses Dataproc Serverless, paying *only* for the compute time used during the 10-minute Spark job, rather than for a 24/7 persistent cluster.
@@ -225,7 +225,7 @@ LIMIT 10;
     * `customer_name` (STRING)
     * `country` (STRING)
     * `risk_score` (FLOAT) - A pre-calculated static risk score.
-    * ... (email, phone, etc.)
+  
 
 **Fact Table: `transactions`**
 * This is the main output table, appended to by the pipeline.
@@ -350,16 +350,20 @@ The pipeline is defined in the `airflow_job.py` DAG and consists of 3 main tasks
 
 This project successfully demonstrates the design, implementation, and deployment of a modern, cloud-native data pipeline. It provides tangible business value by automating a critical fraud detection workflow, reducing manual labor, improving data accuracy, and enabling proactive, data-driven decisions. The skills demonstrated range from low-level data transformation in PySpark to high-level cloud architecture and orchestration with Airflow.
 
-##  Future Enhancements
+## Future Enhancements
 
-* **[Streaming Pipeline]** Migrate from a batch (sensor-based) pipeline to a real-time streaming pipeline using **GCP Pub/Sub** and **Dataflow** for millisecond-level fraud detection.
-* **[Machine Learning]** Replace the static, rule-based `fraud_risk_level` (e.g., `amount > 10000`) with a dynamic score from a **Vertex AI** auto-ML model trained on historical transaction data.
+- [ ] **Migrate to Streaming**: Convert the pipeline to a real-time system using **GCP Pub/Sub** and **Dataflow** for millisecond-level fraud detection.
+- [ ] **Optimize BigQuery**: Partition the `transactions` fact table by `transaction_timestamp` (day/hour) for faster query performance.
+- [ ] **Add Clustering**: Cluster the BigQuery `transactions` table by `cardholder_id` and `merchant_id` to improve join and filter performance.
+- [ ] **Configure Advanced Alerts**: Set up Slack/email alerts not just for DAG failures, but also for business logic (e.g., when a "Critical" risk transaction is detected).
+- [ ] **Implement SCD Type 2**: Modify the `cardholders` dimension table to track changes in `risk_score` over time using Slowly Changing Dimensions.
+- [ ] **Create Data Lineage**: Integrate **OpenLineage** with Airflow and Spark to automatically track data lineage.
+
 
 ## Author
-
-**Rehman Ali**&nbsp;&nbsp;
-Data Engineer | 2 Years Experience&nbsp;&nbsp;
-**LinkedIn**: [linkedin.com/in/rehmanali24](https://www.linkedin.com/in/rehmanali24/)&nbsp;&nbsp;
+**Rehman Ali**;
+Data Engineer | 2 Years Experience
+**LinkedIn**: [linkedin.com/in/rehmanali24](https://www.linkedin.com/in/rehmanali24/)
 **GitHub**: [github.com/Rehaman24](https://github.com/Rehaman24)
 
 ## Acknowledgments
