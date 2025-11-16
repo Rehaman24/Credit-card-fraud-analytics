@@ -2,31 +2,28 @@
 
 Production-grade, serverless data pipeline that transforms raw JSON transactions into analytics-ready fraud insights—processing daily files in under 10 minutes with 100% unit test coverage.
 
-[![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/) |
-[![Apache Airflow](https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=apache-airflow&logoColor=white)](https://airflow.apache.org/)|
- [![Apache Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)](https://spark.apache.org/) 
-[![Dataproc](https://img.shields.io/badge/Dataproc_Serverless-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/dataproc) |
-[![Google BigQuery](https://img.shields.io/badge/Google_BigQuery-4285F4?style=for-the-badge&logo=google-bigquery&logoColor=white)](https://cloud.google.com/bigquery) |
+[![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/)
+[![Apache Airflow](https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=apache-airflow&logoColor=white)](https://airflow.apache.org/)
+[![Apache Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)](https://spark.apache.org/) 
+[![Dataproc](https://img.shields.io/badge/Dataproc_Serverless-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/dataproc)
+[![Google BigQuery](https://img.shields.io/badge/Google_BigQuery-4285F4?style=for-the-badge&logo=google-bigquery&logoColor=white)](https://cloud.google.com/bigquery)
 [![Google Cloud Storage](https://img.shields.io/badge/Google_Cloud_Storage-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/storage) 
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) |
-[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/features/actions) |
-[![PyTest](https://img.shields.io/badge/PyTest-0A9B5C?style=for-the-badge&logo=pytest&logoColor=white)](https://pytest.org/) |
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/features/actions)
+[![PyTest](https://img.shields.io/badge/PyTest-0A9B5C?style=for-the-badge&logo=pytest&logoColor=white)](https://pytest.org/)
 
 
 ▶️ **Watch the Full Demo (Code, UI, Results)** `[YOUR_LOOM_DEMO_LINK]` | **🔗Project Architecture `[YOUR_ARCHITECTURE_LINK]`** | 📊 **Jump to Results & Validation
 `[#14-execution--results]`**
 
 ## TL;DR for Recruiters(30-Sec Summary)
+- **What it does:** Automates daily fraud risk analysis from raw JSON transactions → analytics-ready, enriched BigQuery tables.
+- **Technical stack:** **PySpark** + **Apache Airflow** + **GCP** (Dataproc Serverless, BigQuery, GCS) + **CI/CD** (GitHub Actions, PyTest).
+- **Key metrics:** Daily files processed in **< 10 minutes** | **100% unit test coverage** | **0% duplicate file runs**.
+- **Real-world impact:** Reduces fraud detection lag from **48 hours to < 1 hour** | Saves 10+ hours/week of manual analysis.
+- **Production features:** Serverless Spark processing, **automated file archiving**, automated CI/CD testing, scalable architecture.
 
-**What it does:** Automates daily fraud risk analysis from raw JSON transactions → analytics-ready, enriched BigQuery tables. 
-
-**Technical stack:** **PySpark** + **Apache Airflow** + **GCP** (Dataproc Serverless, BigQuery, GCS) + **CI/CD** (GitHub Actions, PyTest).
-**Key metrics:** Daily files processed in **< 10 minutes** | **100% unit test coverage** | **0% duplicate file runs**.
-**Real-world impact:** Reduces fraud detection lag from **48 hours to < 1 hour** | Saves 10+ hours/week of manual analysis.
-**Production features:** Serverless Spark processing, 
-**automated file archiving**, automated CI/CD testing, scalable architecture.
-
-* **Core Skills:**
+**Core Skills:**
     * **Data Processing:** PySpark (DataFrames, SQL, transformations, joins).
     * **Orchestration:** Apache Airflow (GCP Composer, DAGs, Operators, Sensors).
     * **Cloud Platform:** GCP (Dataproc, BigQuery, GCS, Composer).
@@ -36,18 +33,14 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 
 
 ## Quick Start Guide
-
 **👔 For Recruiters (30 sec):**&nbsp;&nbsp;
 [TL;DR Summary](#1-⚡-tldr-for-recruiters-30-second-summary) → [Watch Demo]&#8203;(`[YOUR_LOOM_DEMO_LINK]`) → [Business Impact](#7-business-impact--use-cases)
-
 **👨‍💻 For Engineers (5 min):**&nbsp;&nbsp;
 [Pipeline Components](#12-pipeline-components) → [Architecture](#11-architecture--data-model) → [Setup Instructions](#13-setup-instructions)
-
 **🔍 For Hiring Managers (2 min):**&nbsp;&nbsp;
 [Results & Metrics](#14-execution--results) → [Skills Shown](#17-key-achievements--learnings) → [Interactive Diagram]&#8203;(`[YOUR_ARCHITECTURE_LINK]`)
 
 ### 📊 Impact at a Glance
-
 | Metric | Before (Manual) | After (This Pipeline) | Improvement |
 |:---|:---|:---|:---|
 | **Fraud Detection Lag** | 24-48 hours | < 1 hour | **98% faster detection** ⏱️ |
@@ -57,14 +50,13 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 | **Scalability** | Fails > 1M rows | Handles Petabytes | **Unlimited** 🚀 |
 
 ## 📁 Project Links
-- **GitHub Repository**: [github.com/Rehaman24/fraud-risk-pipeline-pyspark-airflow-gcp](httpsS://github.com/Rehaman24/fraud-risk-pipeline-pyspark-airflow-gcp)
-- **LinkedIn**: [linkedin.com/in/rehmanali24](httpss://www.linkedin.com/in/rehmanali24/)
-- **GitHub Profile**: [github.com/Rehaman24](httpss://github.com/Rehaman24)
-  
----
+- **GitHub Repository**: [github.com/Rehaman24/fraud-risk-pipeline-pyspark-airflow-gcp](https://github.com/Rehaman24/fraud-risk-pipeline-pyspark-airflow-gcp)
+- **LinkedIn**: [linkedin.com/in/rehmanali24](https://www.linkedin.com/in/rehmanali24/)
+- **GitHub Profile**: [github.com/Rehaman24](https://github.com/Rehaman24)
+
+--
 
 ## Technologies & Tools
-
 **Cloud Platform**: GCP
 **Orchestration**: Airflow via GCP Composer
 **Data Processing**: PySpark
@@ -85,7 +77,6 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 **Concepts**: Serverless ETL, Data Enrichment, Risk Scoring, CI/CD Pipeline, Unit Testing, File-based Triggering (Polling), Data Validation.
 
 ## Overview
-
 This project provides an end-to-end, automated pipeline for credit card fraud analysis.
 1.  **Ingest:** Daily raw JSON transaction files are uploaded to a GCS bucket.
 2.  **Orchestrate:** An Airflow DAG running in GCP Composer detects the new file using a `GCSObjectsWithPrefixExistenceSensor`.
@@ -107,7 +98,7 @@ This project provides an end-to-end, automated pipeline for credit card fraud an
 - **Data Enrichment**: Joins raw transactions with cardholder data (like static risk scores) to provide crucial context for more accurate analysis.
 - **Scalable Architecture**: Uses PySpark and Dataproc Serverless to easily handle massive growth in transaction volume.
 
-### Real-World Use Cases
+### Real-World Use implementation
 
 #### 1. Proactive Fraud Alerting
 **Impact**: The fraud analysis team can query a single BigQuery table to see all 'Critical' or 'High' risk transactions from the last hour, enabling immediate action.
@@ -136,7 +127,8 @@ ORDER BY
 
 **Impact**: Risk management teams can analyze aggregated data to identify which merchant categories, locations, or transaction types are being targeted by fraudsters
 
-```SELECT
+```
+SELECT
   merchant_category,
   COUNT(*) AS total_transactions,
   SUM(CASE WHEN fraud_risk_level IN ('Critical', 'High') THEN 1 ELSE 0 END) AS fraud_txns,
@@ -161,12 +153,12 @@ LIMIT 10;
 - Top High-Risk Merchant Categories
 - Fraud Detection Time (Time-to-Detect)
 - Transaction Volume vs. Fraud Volume Trends
-- 
+
 **Quantifiable Business Benefits**
 **Time savings(To Detect Fraud Lag):**
-- **Before: **24-48 hours to detect suspicious patterns.
+- **Before:** 24-48 hours to detect suspicious patterns.
 - **After:** < 1 hour for data to be processed, scored, and available in BigQuery.
-**Impact:** Drastically reduces the window for criminals to commit repeat fraud, directly saving money.
+- **Impact:** Drastically reduces the window for criminals to commit repeat fraud, directly saving money.
 
 **Analyst Time Savings:**
 - **Before:** Manual data gathering and analysis takes 4-8 hours per day.
@@ -191,12 +183,12 @@ LIMIT 10;
 
 #### Production-Ready Features
 
-- ✅ Serverless Processing: Uses Dataproc Serverless for zero-ops cluster management.
-- ✅ Automated Testing: CI/CD pipeline runs PyTest unit tests on every push, blocking failed builds.
-- ✅ Single-Run Design: File-archiving logic prevents the pipeline from processing the same file twice.
-- ✅ Modular & Scalable: PySpark logic is decoupled from Airflow orchestration.
-- ✅ Data Validation: Spark job filters out bad records (e.g., negative amounts, null IDs) before processing.
-- ✅ Comprehensive error handling and Airflow retries built-in.
+✅ Serverless Processing: Uses Dataproc Serverless for zero-ops cluster management.
+✅ Automated Testing: CI/CD pipeline runs PyTest unit tests on every push, blocking failed builds.
+✅ Single-Run Design: File-archiving logic prevents the pipeline from processing the same file twice.
+✅ Modular & Scalable: PySpark logic is decoupled from Airflow orchestration.
+✅ Data Validation: Spark job filters out bad records (e.g., negative amounts, null IDs) before processing.
+✅ Comprehensive error handling and Airflow retries built-in.
 
 #### Quantifiable Benefits
 * **Cost Efficiency:** Uses Dataproc Serverless, paying *only* for the compute time used during the 10-minute Spark job, rather than for a 24/7 persistent cluster.
@@ -214,7 +206,7 @@ LIMIT 10;
 
 `[Architecture_Diagram.png]`
 
-## 11. Data Model & Tables
+##  Data Model & Tables
 
 ### Data Model (BigQuery)
 
@@ -239,7 +231,7 @@ LIMIT 10;
     * `customer_name` (STRING) - *Enriched*
     * `country` (STRING) - *Enriched*
     * `risk_score` (FLOAT) - *Enriched*
-    * **`fraud_risk_level` (STRING)** - ***Calculated (Low, High, Critical)***
+    * `fraud_risk_level` (STRING) - Calculated (Low, High, Critical)*
 
 ## Pipeline Components
 
@@ -361,9 +353,10 @@ This project successfully demonstrates the design, implementation, and deploymen
 
 
 ## Author
-**Rehman Ali**;
-Data Engineer | 2 Years Experience
-**LinkedIn**: [linkedin.com/in/rehmanali24](https://www.linkedin.com/in/rehmanali24/)
+
+**Rehman Ali**&nbsp;&nbsp;
+Data Engineer | 2 Years Experience&nbsp;&nbsp;
+**LinkedIn**: [linkedin.com/in/rehmanali24](https://www.linkedin.com/in/rehmanali24/)&nbsp;&nbsp;
 **GitHub**: [github.com/Rehaman24](https://github.com/Rehaman24)
 
 ## Acknowledgments
