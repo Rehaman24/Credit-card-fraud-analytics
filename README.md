@@ -352,19 +352,27 @@ The pipeline is defined in the `airflow_job.py` DAG and consists of 3 main tasks
         * A normal, low-risk transaction is flagged as `"Low"`.
     * To run: `pytest`
 
-    **GitHub Actions Run Main Tests:**
-    ![GitHub Actions Run Main Tests](Screenshots/github_actions_run_main_tests.png)
+*   **GitHub Actions Results (CI/CD Pipeline):**
 
     **GitHub Actions Run Tests:**
     ![GitHub Actions Run Tests](Screenshots/github_actions_runtests.png)
+  
+    **GitHub Actions Run Main Tests:**
+    ![GitHub Actions Run Main Tests](Screenshots/github_actions_run_main_tests.png)
 
-* **SQL (Data Validation):**
+  
+
+*   **SQL (Data Validation):**
     * After a run, you can verify the results in BigQuery:
 
     ```sql
     -- Check 1: Count of records for a specific day
     SELECT COUNT(*) FROM `credit_card.transactions` WHERE DATE(transaction_timestamp) = '2025-02-01';
+    ```
+    **Total records on specific date:**
+    ![Total records on specific date](Screenshots/specific_day_count_records.png)
 
+    ```sql
     -- Check 2: Verify risk level distribution
     SELECT fraud_risk_level, COUNT(*)
     FROM `credit_card.transactions`
@@ -377,13 +385,11 @@ The pipeline is defined in the `airflow_job.py` DAG and consists of 3 main tasks
     ```sql
     -- Check 3: Spot-check a critical transaction
     SELECT * FROM `credit_card.transactions`
-    WHERE transaction_amount > 10000 AND fraud_risk_level != 'Critical'
-    LIMIT 1; -- (This query should return 0 rows)
+    WHERE transaction_amount > 10000 AND fraud_risk_level = 'Critical';
     ```
-    **BigQuery Top 10 Risk Transactions:**
-    ![BigQuery Top 10 Risk Transactions](Screenshots/BQ_Top_10_risk_txn.png)
-  
-
+    **BigQuery Risk Transactions:**
+    ![BigQuery Risk Transactions](Screenshots/criritcal_transactions.png)
+    
 ## Monitoring & Troubleshooting
 
 * **Monitoring:**
