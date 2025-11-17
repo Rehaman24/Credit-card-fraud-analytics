@@ -88,7 +88,7 @@ This project provides an end-to-end, automated pipeline for credit card fraud an
 6.  **Archive:** The Airflow DAG moves the processed raw file to an archive folder to ensure idempotent, one-time processing.
 7.  **Test:** The entire PySpark transformation logic is unit-tested with PyTest, and the pipeline is deployed automatically via GitHub Actions, which blocks deployment if tests fail.
 
-## 💼 Business Impact & Real-World Applications
+## Business Impact & Real-World Applications
 
 ### Problem This Pipeline Solves
 
