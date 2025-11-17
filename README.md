@@ -374,10 +374,18 @@ The pipeline is defined in the `airflow_job.py` DAG and consists of 3 main tasks
 
     ```sql
     -- Check 2: Verify risk level distribution
-    SELECT fraud_risk_level, COUNT(*)
-    FROM `credit_card.transactions`
-    WHERE DATE(transaction_timestamp) = '2025-02-01'
-    GROUP BY 1;
+    SELECT
+    transactions.transaction_category,
+    transactions.fraud_risk_level,
+    COUNT(transactions.transaction_id) AS count_of_transactions
+    FROM
+    `bigqueryprojects24`.`credit_card`.`transactions` AS transactions
+    GROUP BY
+    transactions.transaction_category,
+    transactions.fraud_risk_level
+    ORDER BY
+    transactions.transaction_category,
+    transactions.fraud_risk_level;
     ```
     **BigQuery Risk Level Distribution:**
     ![BigQuery Risk Level Distribution](Screenshots/BQ_Risk_distribution_category.png)
