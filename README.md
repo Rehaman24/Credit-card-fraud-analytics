@@ -125,7 +125,7 @@ LIMIT
   10;
 ```
 
-![Screenshot: Fraudulent Transactions Output](Screenshots/BQ_Top 10 risk_txn.png)
+![Screenshot: Fraudulent Transactions Output](Screenshots/BQ_Top_10_risk_txn.png)
 
 
 **Business Value**: Immediately freeze compromised cards, contact customers to verify charges, and prevent further financial loss.
