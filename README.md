@@ -17,7 +17,7 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 
 **🔗Project Architecture [View Diagram in Eraser](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share)**
 
-📊 **Jump to Results & Validation [Execution--results](execution--results)**
+📊 **Jump to Results & Validation [Execution--results](#execution--results)**
 
 
 ## TL;DR for Recruiters(30-Sec Summary)
@@ -41,7 +41,7 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 
 **👨‍💻 For Engineers (5 min):** [Pipeline Components](#pipeline-components) → [Architecture](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share) → [Setup Instructions](#setup-instructions)
 
-**🔍 For Hiring Managers (2 min):** [Results & Metrics](execution--results) → [Skills Shown](#key-achievements--learnings) → [Interactive Diagram](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share)
+**🔍 For Hiring Managers (2 min):** [Results & Metrics](#execution--results) → [Skills Shown](#key-achievements--learnings) → [Interactive Diagram](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share)
 
 
 ### 📊 Impact at a Glance
@@ -323,8 +323,6 @@ The pipeline is defined in the `airflow_job.py` DAG and consists of 3 main tasks
 
 ## Execution & Results
 
-## Execution & Results
-
 1.  **Trigger the Pipeline:**
     * Upload one of the sample data files (e.g., `transactions_2025-02-01.json`) to the `gs://[YOUR_BUCKET]/transactions/` folder in GCS.
 2.  **Monitor:**
@@ -384,7 +382,7 @@ The pipeline is defined in the `airflow_job.py` DAG and consists of 3 main tasks
     ```
     **BigQuery Top 10 Risk Transactions:**
     ![BigQuery Top 10 Risk Transactions](Screenshots/BQ_Top_10_risk_txn.png)
-
+  
 
 ## Monitoring & Troubleshooting
 
