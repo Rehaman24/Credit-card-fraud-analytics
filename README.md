@@ -125,6 +125,9 @@ LIMIT
   10;
 ```
 
+![Screenshot: Fraudulent Transactions Output](Screenshots/BQ_Top 10 risk_txn.png)
+
+
 **Business Value**: Immediately freeze compromised cards, contact customers to verify charges, and prevent further financial loss.
 
 #### 2. Risk Distribution category
@@ -145,6 +148,8 @@ ORDER BY
   transactions.transaction_category,
   transactions.fraud_risk_level;
 ```
+![Screenshot: Fraudulent Transactions Output](Screenshots/BQ_Risk_distribution_category.png)
+
 **Business Value**: Update internal risk models, place stricter controls on high-risk categories, quantify the severity of each risk segment, and inform future fraud prevention strategies.
 
 ---
