@@ -203,14 +203,14 @@ LIMIT 10;
 ```
 mermaid
 flowchart TD
-    A[Raw JSON Files Uploaded to GCS] --> B[GCSObjectsWithPrefixExistenceSensor]
-    B -->|File Detected| C[DataprocCreateBatchOperator\n(PySpark Job Execution)]
-    C --> D[Spark: Data Cleaning, Validation, Enrichment]
-    D --> E[BigQuery: Transactions Table]
-    E --> F[GCSToGCSOperator\n(Archive Processed File)]
-    C -.-> G[PyTest Unit Testing via CI/CD (GitHub Actions)]
-    D --> H[Business Logic:\nRisk Scoring,\nJoin with Cardholders Table]
-    H --> E
+    A[Raw JSON Files Uploaded to GCS] --> B[GCSObjectsWithPrefixExistenceSensor]
+    B -->"File Detected" C[DataprocCreateBatchOperator\n(PySpark Job Execution)]
+    C --> D[Spark: Data Cleaning, Validation, Enrichment]
+    D --> E[BigQuery: Transactions Table]
+    E --> F[GCSToGCSOperator\n(Archive Processed File)]
+    C -.-> G[PyTest Unit Testing via CI/CD (GitHub Actions)]
+    D --> H[Business Logic:\nRisk Scoring,\nJoin with Cardholders Table]
+    H --> E
  
 ```
 
