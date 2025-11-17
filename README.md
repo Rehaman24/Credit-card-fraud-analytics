@@ -103,49 +103,50 @@ This project provides an end-to-end, automated pipeline for credit card fraud an
 ### Real-World Use implementation
 
 #### 1. Proactive Fraud Alerting
-**Impact**: The fraud analysis team can query a single BigQuery table to see all 'Critical' or 'High' risk transactions from the last hour, enabling immediate action.
+**Impact**: The fraud analysis team can query a single BigQuery table to see top 10 High risk transactions.
 
 **Example Query**:
 ```sql
 SELECT
-  transaction_id,
   cardholder_id,
-  customer_name,
+  transaction_id,
   transaction_amount,
-  fraud_risk_level,
-  merchant_name
+  risk_score,
+  merchant_name,
+  merchant_category,
+  transaction_timestamp
 FROM
-  `credit_card.transactions`
+  `bigqueryprojects24`.`credit_card`.`transactions`
 WHERE
-  fraud_risk_level IN ('Critical', 'High')
-  AND transaction_timestamp > TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 1 HOUR)
+  high_risk = TRUE
 ORDER BY
-  transaction_timestamp DESC;
+  risk_score DESC
+LIMIT
+  10;
 ```
 
 **Business Value**: Immediately freeze compromised cards, contact customers to verify charges, and prevent further financial loss.
 
-#### 2. Fraud Pattern & Hotspot Analysis
+#### 2. Risk Distribution category
 
-**Impact**: Risk management teams can analyze aggregated data to identify which merchant categories, locations, or transaction types are being targeted by fraudsters
+**Impact**: Risk management teams can analyze aggregated data to identify which merchant categories, locations, or transaction types are being targeted by fraudsters, prioritizing the largest risk segment
 
 ```
 SELECT
-  merchant_category,
-  COUNT(*) AS total_transactions,
-  SUM(CASE WHEN fraud_risk_level IN ('Critical', 'High') THEN 1 ELSE 0 END) AS fraud_txns,
-  (SUM(CASE WHEN fraud_risk_level IN ('Critical', 'High') THEN 1 ELSE 0 END) / COUNT(*)) * 100 AS fraud_rate_pct
+  transactions.transaction_category,
+  transactions.fraud_risk_level,
+  COUNT(transactions.transaction_id) AS count_of_transactions
 FROM
-  `credit_card.transactions`
-WHERE
-  transaction_timestamp >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)
+  `bigqueryprojects24`.`credit_card`.`transactions` AS transactions
 GROUP BY
-  merchant_category
+  transactions.transaction_category,
+  transactions.fraud_risk_level
 ORDER BY
-  fraud_rate_pct DESC
-LIMIT 10;
+  transactions.transaction_category,
+  transactions.fraud_risk_level;
 ```
-**Business Value**: Update internal risk models, place stricter controls on high-risk categories, and inform future fraud prevention strategies.
+**Business Value**: Update internal risk models, place stricter controls on high-risk categories, quantify the severity of each risk segment, and inform future fraud prevention strategies.
+
 ---
 #### 3. Data-Driven Risk Management
 **Impact**: Executives and managers can access reliable, up-to-date fraud metrics from BI dashboards (Looker, Tableau) connected directly to BigQuery.
