@@ -201,7 +201,18 @@ LIMIT 10;
 
 ## Architecture
 
-`[Architecture_Diagram.png]`
+```
+flowchart TD
+    A[Raw JSON Files Uploaded to GCS] --> B[GCSObjectsWithPrefixExistenceSensor]
+    B -->|File Detected| C[DataprocCreateBatchOperator<br>(PySpark Job Execution)]
+    C --> D[Spark: Data Cleaning, Validation, Enrichment]
+    D --> E[BigQuery: Transactions Table]
+    E --> F[GCSToGCSOperator<br>(Archive Processed File)]
+    C -.-> G[PyTest Unit Testing via CI/CD (GitHub Actions)]
+    D --> H[Business Logic:<br>Risk Scoring,<br>Join with Cardholders Table]
+    H --> E
+```
+
 
 ##  Data Model & Tables
 
