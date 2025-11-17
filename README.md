@@ -13,11 +13,12 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 [![PyTest](https://img.shields.io/badge/PyTest-0A9B5C?style=for-the-badge&logo=pytest&logoColor=white)](https://pytest.org/)
 
 
-▶️ **Watch the Full Demo (Code, UI, Results)** `[YOUR_LOOM_DEMO_LINK]` 
+▶️ **Watch the Full Demo (Code, UI, Results)** [YOUR LOOM DEMO LINK](https://loom.com/your-demo-link)
 
-**🔗Project Architecture `[https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share]`** 
+**🔗Project Architecture [View Diagram in Eraser](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share)**
 
-📊 **Jump to Results & Validation `[#14-execution--results]`**
+📊 **Jump to Results & Validation [#14-execution--results](#14-execution--results)**
+
 
 ## TL;DR for Recruiters(30-Sec Summary)
 - **What it does:** Automates daily fraud risk analysis from raw JSON transactions → analytics-ready, enriched BigQuery tables.
@@ -35,11 +36,11 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 
 ## Quick Start Guide
 
-**👔 For Recruiters (30 sec):** [TL;DR Summary](#1-⚡-tldr-for-recruiters-30-second-summary) → [Watch Demo] (`[YOUR_LOOM_DEMO_LINK]`) → [Business Impact](#7-business-impact--use-cases)
+**👔 For Recruiters (30 sec):** [TL;DR Summary](#1-⚡-tldr-for-recruiters-30-second-summary) → [Watch Demo](YOUR_LOOM_DEMO_LINK) → [Business Impact](#7-business-impact--use-cases)
 
 **👨‍💻 For Engineers (5 min):** [Pipeline Components](#12-pipeline-components) → [Architecture](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share) → [Setup Instructions](#13-setup-instructions)
 
-**🔍 For Hiring Managers (2 min):** [Results & Metrics](#14-execution--results) → [Skills Shown](#17-key-achievements--learnings) → [Interactive Diagram] (`[https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share]`)
+**🔍 For Hiring Managers (2 min):** [Results & Metrics](#14-execution--results) → [Skills Shown](#17-key-achievements--learnings) → [Interactive Diagram](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share)
 
 
 ### 📊 Impact at a Glance
@@ -244,22 +245,6 @@ LIMIT 10;
    | CI/CD Unit Tests (PyTest) | <-- GitHub Actions block deploy on fail
    +---------------------------+
 ```
-## Architecture
-
-**Pipeline Overview:**
-1. **Raw JSON files** are uploaded to Google Cloud Storage (GCS).
-2. **Airflow DAG** triggers when new files are detected in GCS.
-3. **Airflow launches Spark job** for data cleaning, validation, and enrichment.
-4. **Enriched data** is loaded into BigQuery (Transactions table).
-5. **Processed files** are archived within GCS.
-6. **PyTest unit tests** run via CI/CD (GitHub Actions) for pipeline reliability.
-7. **Spark applies business logic** for risk scoring and joins with Cardholder metadata.
-
----
-
-**Pipeline Flow:**  
-GCS (Upload) → Airflow DAG (Detect & Orchestrate) → Spark (Clean, Enrich, Score) → BigQuery (Load, Join) → GCS (Archive)  
-Airflow orchestrates all steps and triggers CI/CD testing.
 
 ##  Data Model & Tables
 
