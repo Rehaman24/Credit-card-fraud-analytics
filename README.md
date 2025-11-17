@@ -241,6 +241,23 @@ LIMIT 10;
    | CI/CD Unit Tests (PyTest) | <-- GitHub Actions block deploy on fail
    +---------------------------+
 ```
+## Architecture
+
+**Pipeline Overview:**
+1. **Raw JSON files** are uploaded to Google Cloud Storage (GCS).
+2. **Airflow DAG** triggers when new files are detected in GCS.
+3. **Airflow launches Spark job** for data cleaning, validation, and enrichment.
+4. **Enriched data** is loaded into BigQuery (Transactions table).
+5. **Processed files** are archived within GCS.
+6. **PyTest unit tests** run via CI/CD (GitHub Actions) for pipeline reliability.
+7. **Spark applies business logic** for risk scoring and joins with Cardholder metadata.
+
+---
+
+**Pipeline Flow:**  
+GCS (Upload) → Airflow DAG (Detect & Orchestrate) → Spark (Clean, Enrich, Score) → BigQuery (Load, Join) → GCS (Archive)  
+Airflow orchestrates all steps and triggers CI/CD testing.
+
 ##  Data Model & Tables
 
 ### Data Model (BigQuery)
