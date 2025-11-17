@@ -200,8 +200,7 @@ LIMIT 10;
 * **Modularity:** The project separates orchestration (Airflow) from transformation logic (PySpark) and configuration (GCP variables). This makes it easy to update the Spark logic without touching the DAG, or vice-versa.
 
 ## Architecture
-
-```
+```mermaid
 flowchart TD
     A[Raw JSON Files Uploaded to GCS] --> B[GCSObjectsWithPrefixExistenceSensor]
     B -->|File Detected| C[DataprocCreateBatchOperator<br>(PySpark Job Execution)]
@@ -212,7 +211,6 @@ flowchart TD
     D --> H[Business Logic:<br>Risk Scoring,<br>Join with Cardholders Table]
     H --> E
 ```
-
 
 ##  Data Model & Tables
 
