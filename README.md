@@ -200,16 +200,18 @@ LIMIT 10;
 * **Modularity:** The project separates orchestration (Airflow) from transformation logic (PySpark) and configuration (GCP variables). This makes it easy to update the Spark logic without touching the DAG, or vice-versa.
 
 ## Architecture
-```mermaid
+```
+mermaid
 flowchart TD
-    A[Raw JSON Files Uploaded to GCS] --> B[GCSObjectsWithPrefixExistenceSensor]
-    B -->|File Detected| C[DataprocCreateBatchOperator<br>(PySpark Job Execution)]
-    C --> D[Spark: Data Cleaning, Validation, Enrichment]
-    D --> E[BigQuery: Transactions Table]
-    E --> F[GCSToGCSOperator<br>(Archive Processed File)]
-    C -.-> G[PyTest Unit Testing via CI/CD (GitHub Actions)]
-    D --> H[Business Logic:<br>Risk Scoring,<br>Join with Cardholders Table]
-    H --> E
+    A[Raw JSON Files Uploaded to GCS] --> B[GCSObjectsWithPrefixExistenceSensor]
+    B -->|File Detected| C[DataprocCreateBatchOperator\n(PySpark Job Execution)]
+    C --> D[Spark: Data Cleaning, Validation, Enrichment]
+    D --> E[BigQuery: Transactions Table]
+    E --> F[GCSToGCSOperator\n(Archive Processed File)]
+    C -.-> G[PyTest Unit Testing via CI/CD (GitHub Actions)]
+    D --> H[Business Logic:\nRisk Scoring,\nJoin with Cardholders Table]
+    H --> E
+ 
 ```
 
 ##  Data Model & Tables
