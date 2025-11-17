@@ -200,19 +200,45 @@ LIMIT 10;
 * **Modularity:** The project separates orchestration (Airflow) from transformation logic (PySpark) and configuration (GCP variables). This makes it easy to update the Spark logic without touching the DAG, or vice-versa.
 
 ## Architecture
-```
-mermaid
-flowchart TD
-    A[Raw JSON Files Uploaded to GCS] --> B[GCSObjectsWithPrefixExistenceSensor]
-    B -->"File Detected" C[DataprocCreateBatchOperator\n(PySpark Job Execution)]
-    C --> D[Spark: Data Cleaning, Validation, Enrichment]
-    D --> E[BigQuery: Transactions Table]
-    E --> F[GCSToGCSOperator\n(Archive Processed File)]
-    C -.-> G[PyTest Unit Testing via CI/CD (GitHub Actions)]
-    D --> H[Business Logic:\nRisk Scoring,\nJoin with Cardholders Table]
-    H --> E
- 
-```
+   +---------------------------+
+   |    GCS Bucket            | <-- Raw JSON files (transactions)
+   +-------------+-------------+
+                 |
+                 v
+   +---------------------------+
+   | Airflow DAG (Composer)    | <-- Sensor detects new file (GCSObjectsWithPrefixExistenceSensor)
+   +-------------+-------------+
+                 |
+                 v
+   +---------------------------+
+   | Dataproc Batch Operator   | <-- Runs PySpark ETL job
+   | (Serverless Spark)        |
+   +-------------+-------------+
+                 |
+                 v
+   +---------------------------+
+   | PySpark Transform         | <-- Cleans, enriches, scores risk,
+   | business logic: joins     |     applies rules
+   | cardholders info          |
+   +-------------+-------------+
+                 |
+                 v
+   +---------------------------+
+   | BigQuery Tables           | <-- Stores enriched transactions
+   | - cardholders (dim)       |     - cardholders
+   | - transactions (fact)     |     - transactions (with fraud_risk_level)
+   +-------------+-------------+
+                 |
+                 v
+   +---------------------------+
+   | Archive Processed File    | <-- GCSToGCSOperator moves to /archive/
+   +---------------------------+
+                 |
+                 v
+   +---------------------------+
+   | CI/CD Unit Tests (PyTest) | <-- GitHub Actions block deploy on fail
+   +---------------------------+
+
 
 ##  Data Model & Tables
 
