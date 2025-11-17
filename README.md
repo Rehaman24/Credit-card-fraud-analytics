@@ -13,8 +13,11 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 [![PyTest](https://img.shields.io/badge/PyTest-0A9B5C?style=for-the-badge&logo=pytest&logoColor=white)](https://pytest.org/)
 
 
-▶️ **Watch the Full Demo (Code, UI, Results)** `[YOUR_LOOM_DEMO_LINK]` | **🔗Project Architecture `[YOUR_ARCHITECTURE_LINK]`** | 📊 **Jump to Results & Validation
-`[#14-execution--results]`**
+▶️ **Watch the Full Demo (Code, UI, Results)** `[YOUR_LOOM_DEMO_LINK]` 
+
+**🔗Project Architecture `[https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share]`** 
+
+📊 **Jump to Results & Validation `[#14-execution--results]`**
 
 ## TL;DR for Recruiters(30-Sec Summary)
 - **What it does:** Automates daily fraud risk analysis from raw JSON transactions → analytics-ready, enriched BigQuery tables.
@@ -34,9 +37,9 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 
 **👔 For Recruiters (30 sec):** [TL;DR Summary](#1-⚡-tldr-for-recruiters-30-second-summary) → [Watch Demo] (`[YOUR_LOOM_DEMO_LINK]`) → [Business Impact](#7-business-impact--use-cases)
 
-**👨‍💻 For Engineers (5 min):** [Pipeline Components](#12-pipeline-components) → [Architecture](#11-architecture--data-model) → [Setup Instructions](#13-setup-instructions)
+**👨‍💻 For Engineers (5 min):** [Pipeline Components](#12-pipeline-components) → [Architecture](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share) → [Setup Instructions](#13-setup-instructions)
 
-**🔍 For Hiring Managers (2 min):** [Results & Metrics](#14-execution--results) → [Skills Shown](#17-key-achievements--learnings) → [Interactive Diagram] (`[YOUR_ARCHITECTURE_LINK]`)
+**🔍 For Hiring Managers (2 min):** [Results & Metrics](#14-execution--results) → [Skills Shown](#17-key-achievements--learnings) → [Interactive Diagram] (`[https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share]`)
 
 
 ### 📊 Impact at a Glance
