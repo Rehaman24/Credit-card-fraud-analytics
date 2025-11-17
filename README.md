@@ -201,6 +201,7 @@ LIMIT 10;
 
 ## Architecture
 
+```
    +---------------------------+
    |    GCS Bucket            | <-- Raw JSON files (transactions)
    +-------------+-------------+
@@ -239,9 +240,7 @@ LIMIT 10;
    +---------------------------+
    | CI/CD Unit Tests (PyTest) | <-- GitHub Actions block deploy on fail
    +---------------------------+
-
----
-
+```
 ##  Data Model & Tables
 
 ### Data Model (BigQuery)
