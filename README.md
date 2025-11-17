@@ -200,6 +200,7 @@ LIMIT 10;
 * **Modularity:** The project separates orchestration (Airflow) from transformation logic (PySpark) and configuration (GCP variables). This makes it easy to update the Spark logic without touching the DAG, or vice-versa.
 
 ## Architecture
+
    +---------------------------+
    |    GCS Bucket            | <-- Raw JSON files (transactions)
    +-------------+-------------+
@@ -239,6 +240,7 @@ LIMIT 10;
    | CI/CD Unit Tests (PyTest) | <-- GitHub Actions block deploy on fail
    +---------------------------+
 
+---
 
 ##  Data Model & Tables
 
