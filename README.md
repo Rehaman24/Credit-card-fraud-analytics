@@ -36,11 +36,12 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 
 ## Quick Start Guide
 
-**👔 For Recruiters (30 sec):** [TL;DR Summary](#1-⚡-tldr-for-recruiters-30-second-summary) → [Watch Demo](YOUR_LOOM_DEMO_LINK) → [Business Impact](#7-business-impact--use-cases)
+**👔 For Recruiters (30 sec):** [TL;DR Summary](#tldr-for-recruiters30-sec-summary) → [Watch Demo](YOUR_LOOM_DEMO_LINK) → [Business Impact](#business-impact--real-world-applications)
 
-**👨‍💻 For Engineers (5 min):** [Pipeline Components](#12-pipeline-components) → [Architecture](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share) → [Setup Instructions](#13-setup-instructions)
 
-**🔍 For Hiring Managers (2 min):** [Results & Metrics](#14-execution--results) → [Skills Shown](#17-key-achievements--learnings) → [Interactive Diagram](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share)
+**👨‍💻 For Engineers (5 min):** [Pipeline Components](#pipeline-components) → [Architecture](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share) → [Setup Instructions](#setup-instructions)
+
+**🔍 For Hiring Managers (2 min):** [Results & Metrics](#14-execution--results) → [Skills Shown](#key-achievements--learnings) → [Interactive Diagram](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share)
 
 
 ### 📊 Impact at a Glance
