@@ -17,7 +17,7 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 
 **🔗Project Architecture [View Diagram in Eraser](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share)**
 
-📊 **Jump to Results & Validation [#14-execution--results](#14-execution--results)**
+📊 **Jump to Results & Validation [Execution--results](execution--results)**
 
 
 ## TL;DR for Recruiters(30-Sec Summary)
@@ -41,7 +41,7 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 
 **👨‍💻 For Engineers (5 min):** [Pipeline Components](#pipeline-components) → [Architecture](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share) → [Setup Instructions](#setup-instructions)
 
-**🔍 For Hiring Managers (2 min):** [Results & Metrics](#14-execution--results) → [Skills Shown](#key-achievements--learnings) → [Interactive Diagram](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share)
+**🔍 For Hiring Managers (2 min):** [Results & Metrics](execution--results) → [Skills Shown](#key-achievements--learnings) → [Interactive Diagram](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share)
 
 
 ### 📊 Impact at a Glance
@@ -323,12 +323,21 @@ The pipeline is defined in the `airflow_job.py` DAG and consists of 3 main tasks
 
 ## Execution & Results
 
+## Execution & Results
+
 1.  **Trigger the Pipeline:**
     * Upload one of the sample data files (e.g., `transactions_2025-02-01.json`) to the `gs://[YOUR_BUCKET]/transactions/` folder in GCS.
 2.  **Monitor:**
     * Open the Airflow UI in your Composer environment.
     * You will see the `credit_card_transactions_dataproc_dag` start to run.
     * The `check_json_file_arrival` task will turn green, followed by the `run_credit_card_processing_job`.
+
+    **Airflow DAG Graph View:**
+    ![Airflow DAG Graph View](Screenshots/airflow_graph.png)
+
+    **Airflow Task View:**
+    ![Airflow Task View](Screenshots/airflow.png)
+
 3.  **View Results:**
     * Once the DAG succeeds, navigate to BigQuery.
     * Run `SELECT * FROM credit_card.transactions LIMIT 10;`.
@@ -345,6 +354,12 @@ The pipeline is defined in the `airflow_job.py` DAG and consists of 3 main tasks
         * A normal, low-risk transaction is flagged as `"Low"`.
     * To run: `pytest`
 
+    **GitHub Actions Run Main Tests:**
+    ![GitHub Actions Run Main Tests](Screenshots/github_actions_run_main_tests.png)
+
+    **GitHub Actions Run Tests:**
+    ![GitHub Actions Run Tests](Screenshots/github_actions_runtests.png)
+
 * **SQL (Data Validation):**
     * After a run, you can verify the results in BigQuery:
 
@@ -357,12 +372,19 @@ The pipeline is defined in the `airflow_job.py` DAG and consists of 3 main tasks
     FROM `credit_card.transactions`
     WHERE DATE(transaction_timestamp) = '2025-02-01'
     GROUP BY 1;
+    ```
+    **BigQuery Risk Level Distribution:**
+    ![BigQuery Risk Level Distribution](Screenshots/BQ_Risk_distribution_category.png)
 
+    ```sql
     -- Check 3: Spot-check a critical transaction
     SELECT * FROM `credit_card.transactions`
     WHERE transaction_amount > 10000 AND fraud_risk_level != 'Critical'
     LIMIT 1; -- (This query should return 0 rows)
     ```
+    **BigQuery Top 10 Risk Transactions:**
+    ![BigQuery Top 10 Risk Transactions](Screenshots/BQ_Top_10_risk_txn.png)
+
 
 ## Monitoring & Troubleshooting
 
