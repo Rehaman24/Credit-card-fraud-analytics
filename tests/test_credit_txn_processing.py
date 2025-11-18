@@ -18,7 +18,7 @@ def spark():
     # and resolves the Python worker crash.
     os.environ['PYSPARK_PYTHON'] = sys.executable
     os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
-    # --- END FIX ---
+    # 
 
     spark = SparkSession.builder \
         .appName("PySparkUnitTest") \
