@@ -66,3 +66,8 @@ enriched_df.write.format('bigquery') \
 
 print(f'Successfully processed file: {JSON_FILE_PATH}')
 print("Advanced Transactions Processing Completed")
+
+
+
+
+#trigger workflow1
