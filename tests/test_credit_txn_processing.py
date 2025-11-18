@@ -15,7 +15,7 @@ def spark():
     # --- FIX ---
     # Point PySpark to the correct Python executable
     # This fixes the 'Missing Python executable 'python3'' error on Windows
-    # and resolves the Python worker crash.
+    # and resolves the Python worker
     os.environ['PYSPARK_PYTHON'] = sys.executable
     os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
     # 
