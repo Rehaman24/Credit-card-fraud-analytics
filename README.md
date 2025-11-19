@@ -13,7 +13,7 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 [![PyTest](https://img.shields.io/badge/PyTest-0A9B5C?style=for-the-badge&logo=pytest&logoColor=white)](https://pytest.org/)
 
 
-▶️ **Watch the Full Demo (Code, UI, Results)** [YOUR LOOM DEMO LINK](https://loom.com/your-demo-link)
+▶️ **Watch the Full Demo (Code, UI, Results)** [LOOM DEMO LINK](https://www.loom.com/share/bfc835919a3f4680a37bdc4c1a59ff21)
 
 **🔗Project Architecture [View Diagram in Eraser](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share)**
 
@@ -36,7 +36,7 @@ Production-grade, serverless data pipeline that transforms raw JSON transactions
 
 ## Quick Start Guide
 
-**👔 For Recruiters (30 sec):** [TL;DR Summary](#tldr-for-recruiters30-sec-summary) → [Watch Demo](YOUR_LOOM_DEMO_LINK) → [Business Impact](#business-impact--real-world-applications)
+**👔 For Recruiters (30 sec):** [TL;DR Summary](#tldr-for-recruiters30-sec-summary) → [Watch Demo](https://www.loom.com/share/bfc835919a3f4680a37bdc4c1a59ff21) → [Business Impact](#business-impact--real-world-applications)
 
 
 **👨‍💻 For Engineers (5 min):** [Pipeline Components](#pipeline-components) → [Architecture](https://app.eraser.io/workspace/Y8y1q4q7fVhpFWHT6Ods?origin=share) → [Setup Instructions](#setup-instructions)
@@ -252,6 +252,9 @@ ORDER BY
    | CI/CD Unit Tests (PyTest) | <-- GitHub Actions block deploy on fail
    +---------------------------+
 ```
+## Architecture
+
+
 
 ##  Data Model & Tables
 
