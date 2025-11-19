@@ -254,6 +254,7 @@ ORDER BY
 ```
 ## Architecture
 
+![Architecture Diagram](Screenshots/Architecture_Diagram.png)
 
 
 ##  Data Model & Tables
